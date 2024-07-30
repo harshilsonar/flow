@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function maxmin(arr)
+        {
+            if(arr.length===0)
+        {
+          return {max:null,min:null};
+        }
+        let Max=Math.max(arr);
+        let Min=Math.min(arr);
+
+        return {Max:max,Min:min};
+
+        }
+        const array = [5, 2, 9, 1, 7, 6];
+       const result = maxmin(array);
+         console.log(`Maximum value: ${result.max}`);
+         console.log(`Minimum value: ${result.min}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes and Clock</title>
+    <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+            }
+        /* #clock {
+            font-size: 2em;
+            margin-bottom: 20px;
+        } */
+        #quote {
+            font-size: 1.5em;
+            text-align: center;
+            margin: 0 20px;
+        }
+        .divs
+        {
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="divs">
+    <span id="hr">00</span><span>:</span><span id="min">00</span><span>:</span><span id="sec">00</span>
+</div>
+   <div id="quote"></div>
+    <script>
+
+  let hrs=document.getElementById('hr');
+  let mins=document.getElementById('min');
+  let secs=document.getElementById('sec');
+        
+
+        setInterval(function(){
+            let current=new Date();
+            hrs.innerHTML=(current.getHours()+0<10?"0":"")+current.getHours();
+            mins.innerHTML=(current.getMinutes()+0<10?"0":"")+current.getMinutes();
+            secs.innerHTML=(current.getSeconds()+0<10?"0":"")+current.getSeconds();
+        })
+        let quotes  = document.getElementById('quote');
+
+        let current=0
+
+
+        const quotesindex = [
+            "The only limit to our realization of tomorrow is our doubts of today.",
+            "I am always to loyal for one person she is my best friend",
+            "Do not watch the clock. Do what it does. Keep going.",
+            "The purpose of our lives is to be happy.",
+            "Life is what happens when you're busy making other plans."
+        ];
+
+        
+        
+//padstartmeans :The padStart() method pads a string with another string (multiple times) until it reaches a given length.
+        function slide() {
+          quotes.innerHTML= quotesindex[current];
+            current = (current + 1) % quotesindex.length;
+        }
+
+
+      setInterval(slide,10000);
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Slider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="slider-container">
+        <img id="sliderImage" src="" alt="Slider Image">
+        <button class="prev" onclick="showPrevSlide()">❮</button>
+        <button class="next" onclick="showNextSlide()">❯</button>
+    </div>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+#sliderImage {
+    width: 100%;
+    border-radius: 10px;
+    transition: opacity 1s ease-in-out;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+
+</style>
+    <script>
+   const images = ['1.webp', '2.webp', '3.webp','4.webp','5.jpg','6.jpg','7.jpg'];
+let currentIndex = 0;
+const sliderImage = document.getElementById('sliderImage');
+
+function showSlide(index) {
+    currentIndex = (index + images.length) % images.length;
+    sliderImage.style.opacity = 0;
+    setTimeout((
+        sliderImage.src = images[currentIndex],
+        sliderImage.style.opacity = 1),500); 
+}
+
+function showPrevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+function showNextSlide() {
+    showSlide(currentIndex + 1);
+}
+
+sliderImage.src = images[currentIndex];
+
+
+
+    </script>
+</body>
+</html>

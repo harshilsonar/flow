@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(x,y)
+        {
+            return x+y;
+        }
+        function sub(x,y)
+        {
+            return x-y;
+        }
+        function multi(x,y)
+        {
+            return x*y;
+        }
+        function divide(x,y)
+        {
+            if(y==0)
+        {
+            return "Error! Division by zero"; 
+        }
+        else
+        {
+            return x/y;
+        }
+
+        function calculator()
+        {
+            const operation = prompt("Select operation:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division");
+            const num1=parseFloat(prompt("enter first number"));
+            const num2=parseFloat(prompt("enter second number"));
+
+            if(operation=='1')
+        {
+            alert(`${num1}+${num2}=${add(num1,num2)}`);
+        }
+        if(operation=='2')
+        {
+            alert(`${num1}-${num2}=${sub(num1,num2)}`);
+        }
+        if(operation=='3')
+        {
+            alert(`${num1}*${num2}=${multi(num1,num2)}`);
+        }
+        if(operation=='4')
+        {
+            alert(`${num1}/${num2}=${divide(num1,num2)}`);
+        }
+        }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function factorial(n) {
+    if (n < 0) {
+        return "Factorial is not defined for negative numbers";
+    }
+    let result = 1;
+    while (n > 0) {
+        result *= n;
+        n--;
+    }
+    return result;
+}
+
+let number = 4;
+console.log(`The factorial of ${number} is ${factorial(number)}`);
+
+    </script>
+</body>
+</html>
